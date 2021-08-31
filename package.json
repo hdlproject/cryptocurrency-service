@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
+    "debug": "export DEBUG=* && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -15,7 +17,8 @@
     "express-winston": "~4.1.0",
     "cors": "~2.8.5",
     "@binance/connector": "~1.2.0",
-    "axios": "~0.21.1"
+    "axios": "~0.21.1",
+    "dotenv": "~10.0.0"
   },
   "devDependencies": {
     "eslint": "~7.32.0",

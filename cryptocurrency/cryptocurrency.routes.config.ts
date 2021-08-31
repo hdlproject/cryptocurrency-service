@@ -13,9 +13,9 @@ export class CryptocurrencyRoutesConfig extends CommonRoutesConfig {
     configureRoutes() {
         this.app.route(`/cryptocurrency/exchangeInfo`)
             .get(async (req: express.Request, res: express.Response) => {
-                await this.cryptocurrencyController.getExchangeInfo()
+                const exchangeIndo = await this.cryptocurrencyController.getExchangeInfo()
 
-                res.status(200).send(`List of cryptocurrencies`);
+                res.status(200).send(exchangeIndo);
             })
 
         return this.app;

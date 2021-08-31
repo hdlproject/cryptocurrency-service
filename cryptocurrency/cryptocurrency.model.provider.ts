@@ -1,5 +1,7 @@
 import axios, {AxiosInstance} from 'axios';
 
+import {ExchangeInfo} from "./cryptocurrency.model";
+
 export class CryptocurrencyModelProvider {
     private httpClient: AxiosInstance;
 
@@ -9,8 +11,8 @@ export class CryptocurrencyModelProvider {
         })
     }
 
-    async getExchangeInfo() {
+    async getExchangeInfo(): Promise<ExchangeInfo> {
         const exchangeInfo = await this.httpClient.get('/api/v3/exchangeInfo');
-        console.log(typeof exchangeInfo)
+        return exchangeInfo.data as ExchangeInfo
     }
 }

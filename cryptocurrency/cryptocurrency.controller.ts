@@ -8,6 +8,6 @@ export class CryptocurrencyController {
     }
 
     async getExchangeInfo() {
-        await this.cryptocurrencyService.getExchangeInfo()
+        return this.cryptocurrencyService.getExchangeInfo()
     }
 }
